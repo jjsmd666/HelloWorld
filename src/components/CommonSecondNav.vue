@@ -1,6 +1,6 @@
 <template>
   <!-- 二级路由导航组件 -->
-  <div class="bottom-nav">
+  <div class="bottom-nav" v-if="isEnlarge">
     <div class="menu_list">
       <div
         class="list-item"
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   props: {
     menuData: {
@@ -53,7 +54,9 @@ export default {
   },
   created() {
     this.secondTopic = this.menuData[0].title;
-    console.log(this.menuData)
+  },
+  computed: {
+    ...mapState(["isEnlarge"]),
   },
   data() {
     return {
@@ -69,7 +72,6 @@ export default {
       this.secondTopic = obj.title;
     },
   },
-  computed: {},
 };
 </script>
 <style lang="less" scoped>

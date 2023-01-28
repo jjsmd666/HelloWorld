@@ -1,7 +1,6 @@
 <template>
   <div class="nav">
     <router-link
-      tag="div"
       v-for="nav in dataList"
       :key="nav.name"
       :to="nav.path"

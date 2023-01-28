@@ -5,13 +5,8 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: '总体态势',
-    redirect: '/ztts/ztqs',
-  },
-  {
     path: '/ztts',
-    name: '总体态势',
+    name: '总体形势',
     redirect: '/ztts/ztqs',
     component: () => import('../views/ZongTiTaiShi/ZongTiTaiShi.vue'),
     children: [
